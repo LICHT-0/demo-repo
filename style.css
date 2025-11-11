@@ -220,6 +220,22 @@ body {
   align-items: center;
   padding: 4rem 0;
 }
+ section {
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+section.slide-left {
+  transform: translateX(-100px);
+}
+section.slide-right {
+  transform: translateX(100px);
+}
+
+section.show {
+  opacity: 1;
+  transform: translateX(0);
+}
 
 /* Sponsor Box with dark transparent background */
 .sponsor-box {

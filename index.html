@@ -183,7 +183,21 @@
     </div>
   </div>
 </section>
+ <script>
+  const allSections = document.querySelectorAll("section");
+allSections.forEach((sec, index) => {
+  sec.classList.add(index % 2 === 0 ? "slide-left" : "slide-right");
+});
 
+window.addEventListener("scroll", () => {
+  allSections.forEach(sec => {
+    if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
+});
+
+ </script>
 
   </body>
 </html>
