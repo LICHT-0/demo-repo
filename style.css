@@ -245,6 +245,7 @@ section.show {
   height: 10rem;
   width: 90%;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 0 3rem;
@@ -659,6 +660,9 @@ section.show {
   .sponsor img {
     height: 35px;
   }
+  .features-grid{
+    flex-direction: column;
+  }
 }
 
 /* ---------- RESPONSIVE ---------- */
@@ -716,38 +720,55 @@ section.show {
   .vertical-line {
     display: none; /* hide the dividers */
   }
-
+}
   /* Main navbar adjustments */
-  .navbar {
-    position: relative !important; /* remove sticky/fixed behavior */
-    top: auto !important;
-    margin-top: 8px; /* small space between both bars */
-    flex-wrap: wrap;
-    padding: 0.8rem 1rem;
+ @media (max-width: 900px) {
+  .nav-links,
+  .nav-buttons {
+    display: flex;
   }
 
-  .nav-links {
-    position: static;
-    transform: none;
-    flex-direction: column;
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
+    position: relative;
+    justify-content: center;
+  }
+
+  .nav-links{
+    margin-left: 2rem;
+    flex-direction: row;
+    align-items: center;
     width: 100%;
     text-align: center;
-    display: none; /* hidden by default */
+  }
+  .nav-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
   }
 
   .nav-links.active {
-    display: flex;
-    margin-top: 0.5rem;
+    gap: 1rem;
   }
 
-  .nav-buttons {
-    width: 100%;
-    justify-content: center;
-    margin-top: 0.5rem;
+  .nav-buttons.active {
+    gap: 0.8rem;
+  }
+
+  .nav-buttons button {
+    width: 80%;
   }
 }
-
 /* ---------------- RESPONSIVE NAVBAR ---------------- */
 @media (max-width: 768px) {
   .mini-navbar {
@@ -762,7 +783,7 @@ section.show {
   }
 
   body > *:not(.mini-navbar) {
-    margin-top: 56px; /* keep content visible */
+ /* keep content visible */
   }
 }
 /* Responsive design */
