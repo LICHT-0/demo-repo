@@ -256,8 +256,9 @@ section.show {
   transform: scale(1.05);
 }
 .sponsor-box h2 {
-  font-size: 1.6rem;
-  color: #fff; /* make text white for contrast */
+  font-size: 1.5rem;
+ color: #000;
+
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -654,9 +655,15 @@ section.show {
   }
 
   .sponsor-box h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    
+    color: #000;
+    font-weight: 600;
+    transition: 0.8s;
   }
-
+  .sponsor-box:hover{
+    transform: scale(1.06);
+  }
   .sponsor img {
     height: 35px;
   }
@@ -782,9 +789,6 @@ section.show {
     top: 56px; /* adjust to actual mini-navbar height on mobile */
   }
 
-  body > *:not(.mini-navbar) {
- /* keep content visible */
-  }
 }
 /* Responsive design */
 @media (max-width: 900px) {
